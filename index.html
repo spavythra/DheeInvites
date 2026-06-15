@@ -451,18 +451,19 @@ body{
 .p2-photo-ring::after{
   content:'';
   position:absolute;
-  inset:-10px;
+  inset:-12px;
   border-radius:50%;
   background:
-    radial-gradient(circle at 50% 5%, rgba(255,244,176,.95) 0 10%, transparent 11%),
-    radial-gradient(circle at 79% 16%, rgba(255,244,176,.92) 0 9%, transparent 10%),
-    radial-gradient(circle at 94% 50%, rgba(255,244,176,.88) 0 9%, transparent 10%),
-    radial-gradient(circle at 79% 84%, rgba(255,244,176,.90) 0 9%, transparent 10%),
-    radial-gradient(circle at 50% 96%, rgba(255,244,176,.92) 0 9%, transparent 10%),
-    radial-gradient(circle at 21% 84%, rgba(255,244,176,.88) 0 9%, transparent 10%),
-    radial-gradient(circle at 6% 50%, rgba(255,244,176,.90) 0 9%, transparent 10%),
-    radial-gradient(circle at 21% 16%, rgba(255,244,176,.92) 0 9%, transparent 10%);
-  filter: blur(.2px);
+    radial-gradient(ellipse 28% 34% at 50% 4%, rgba(255,248,204,.98) 0 100%, transparent 101%),
+    radial-gradient(ellipse 28% 34% at 82% 14%, rgba(255,248,204,.96) 0 100%, transparent 101%),
+    radial-gradient(ellipse 28% 34% at 97% 50%, rgba(255,248,204,.94) 0 100%, transparent 101%),
+    radial-gradient(ellipse 28% 34% at 82% 86%, rgba(255,248,204,.96) 0 100%, transparent 101%),
+    radial-gradient(ellipse 28% 34% at 50% 98%, rgba(255,248,204,.98) 0 100%, transparent 101%),
+    radial-gradient(ellipse 28% 34% at 18% 86%, rgba(255,248,204,.94) 0 100%, transparent 101%),
+    radial-gradient(ellipse 28% 34% at 3% 50%, rgba(255,248,204,.95) 0 100%, transparent 101%),
+    radial-gradient(ellipse 28% 34% at 18% 14%, rgba(255,248,204,.96) 0 100%, transparent 101%);
+  filter: blur(.15px);
+  opacity:.92;
   pointer-events:none;
   z-index:1;
 }
