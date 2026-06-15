@@ -209,7 +209,17 @@ body{
   position:relative;
 }
 /* Orbit Animation for Photo Ring - Page 1 */
-.photo-ring-orbit{position:relative;width:108px;height:108px;}
+.photo-ring-orbit{
+  position:relative;
+  width:108px;
+  height:108px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  left:50%;
+  top:0;
+  transform:translateX(-50%);
+}
 .orbit-trail{
   position:absolute;top:50%;left:50%;width:140px;height:140px;
   transform:translate(-50%,-50%);animation:orbitRotate 8s linear infinite;pointer-events:none;
@@ -672,7 +682,7 @@ body{
   .p1-tagline{ font-size:13px; }
   .photo-ring{ width:90px; height:90px; }
   .p2-photo-zone{ margin-top:-8px; margin-bottom:-10px; overflow:visible; }
-  .p2-photo-ring{ width:84vw; max-width:360px; height:auto; aspect-ratio:1/1; border-radius:50%; overflow:visible; }
+  .p2-photo-ring{ width:60%; max-width:360px; height:auto; aspect-ratio:1/1; border-radius:50%; overflow:visible; }
   .p2-photo-ring video{ object-fit:cover; border-radius:50%; }
   .video-unmute-btn{ right:8px; bottom:8px; top:auto; padding:8px 10px; font-size:12px; }
   .rsvp{ flex-direction:column; align-items:stretch; text-align:center; gap:8px; }
