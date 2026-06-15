@@ -208,6 +208,36 @@ body{
   transition:transform .3s cubic-bezier(.22,.68,0,1.2);
   position:relative;
 }
+/* Orbit Animation for Photo Ring - Page 1 */
+.photo-ring-orbit{position:relative;width:108px;height:108px;}
+.orbit-trail{
+  position:absolute;top:50%;left:50%;width:140px;height:140px;
+  transform:translate(-50%,-50%);animation:orbitRotate 8s linear infinite;pointer-events:none;
+}
+.orbit-sparkle{
+  position:absolute;width:6px;height:6px;border-radius:50%;
+  background:radial-gradient(circle, #fff7c2 0%, #ffd54f 35%, transparent 70%);
+  box-shadow:0 0 8px #ffd54f,0 0 12px rgba(255,213,79,.6);
+  animation:sparkleGlow 1.5s ease-in-out infinite;
+}
+.orbit-sparkle:nth-child(1){background:radial-gradient(circle,#fff7c2 0%,#ffca28 35%,transparent 70%);box-shadow:0 0 10px #ffca28,0 0 18px rgba(255,202,40,.85);}
+.orbit-sparkle:nth-child(2){background:radial-gradient(circle,#fff4d6 0%,#ff8a3d 35%,transparent 70%);box-shadow:0 0 10px #ff8a3d,0 0 18px rgba(255,138,61,.85);}
+.orbit-sparkle:nth-child(3){background:radial-gradient(circle,#e6ffff 0%,#22c8ff 35%,transparent 70%);box-shadow:0 0 10px #22c8ff,0 0 18px rgba(34,200,255,.85);}
+.orbit-sparkle:nth-child(4){background:radial-gradient(circle,#ffe8ef 0%,#ff4d7a 35%,transparent 70%);box-shadow:0 0 10px #ff4d7a,0 0 18px rgba(255,77,122,.85);}
+.orbit-sparkle:nth-child(5){background:radial-gradient(circle,#f4ffe8 0%,#8ee44d 35%,transparent 70%);box-shadow:0 0 10px #8ee44d,0 0 18px rgba(142,228,77,.85);}
+.orbit-sparkle:nth-child(6){background:radial-gradient(circle,#f5f0ff 0%,#8a6bff 35%,transparent 70%);box-shadow:0 0 10px #8a6bff,0 0 18px rgba(138,107,255,.85);}
+.orbit-sparkle:nth-child(7){background:radial-gradient(circle,#fffbe6 0%,#ffd54f 35%,transparent 70%);box-shadow:0 0 10px #ffd54f,0 0 18px rgba(255,213,79,.85);}
+.orbit-sparkle:nth-child(8){background:radial-gradient(circle,#fff1f6 0%,#ff5bb5 35%,transparent 70%);box-shadow:0 0 10px #ff5bb5,0 0 18px rgba(255,91,181,.85);}
+.orbit-sparkle:nth-child(1){top:0;left:50%;transform:translateX(-50%);}
+.orbit-sparkle:nth-child(2){top:25%;right:0;transform:translate(0,-50%);}
+.orbit-sparkle:nth-child(3){top:50%;right:-5px;transform:translateY(-50%);}
+.orbit-sparkle:nth-child(4){bottom:25%;right:0;transform:translate(0,50%);}
+.orbit-sparkle:nth-child(5){bottom:0;left:50%;transform:translateX(-50%);}
+.orbit-sparkle:nth-child(6){bottom:25%;left:0;transform:translate(0,50%);}
+.orbit-sparkle:nth-child(7){top:50%;left:-5px;transform:translateY(-50%);}
+.orbit-sparkle:nth-child(8){top:25%;left:0;transform:translate(0,-50%);}
+@keyframes orbitRotate{0%{transform:translate(-50%,-50%) rotate(0deg);}100%{transform:translate(-50%,-50%) rotate(360deg);}}
+@keyframes sparkleGlow{0%,100%{opacity:.4;box-shadow:0 0 4px #ffd54f,0 0 8px rgba(255,213,79,.4);}50%{opacity:1;box-shadow:0 0 12px #ffd54f,0 0 20px rgba(255,213,79,.8);}}
 .photo-ring:hover{transform:scale(1.04);}
 .photo-ring img{width:100%;height:100%;object-fit:cover;object-position:center 0%;display:block;}
 .photo-ring video{width:100%;height:100%;object-fit:cover;object-position:center 0%;display:none;background:#000;}
@@ -471,10 +501,13 @@ body{
 .p2-photo-ring video{position:relative;z-index:2;width:100%;height:100%;object-fit:cover;}
 .p2-photo-ring img{display:none;}
 .p2-photo-ring video{display:block;background:#000;min-width:100%;min-height:100%;}
-
-/* P2 BODY */
-.p2-body{padding:48px 20px 22px;background:var(--birch);}
-
+.video-unmute-btn{
+  position:absolute;left:auto;right:10px;bottom:10px;top:auto;z-index:5;
+  border:1px solid rgba(255,255,255,.9);border-radius:999px;
+  background:rgba(19,42,27,.88);color:#fff;font:600 11px/1.1 'Inter',sans-serif;
+  padding:7px 10px;letter-spacing:.3px;box-shadow:0 6px 14px rgba(0,0,0,.24);
+}
+.video-unmute-btn:active{transform:scale(.98);}
 /* section grid */
 .sg{display:grid;grid-template-columns:1fr;gap:10px;margin-bottom:12px;}
 .sc{
@@ -629,7 +662,7 @@ body{
   body{ padding:10px 8px 32px; gap:12px; }
   .h-name{ font-size:clamp(44px, 14vw, 68px); }
   .hero{ padding:18px 18px 0; }
-  .hero-inner{ padding-bottom:20px; }
+  .hero-inner{ padding-bottom:72px; }
   .p1-body{ padding:60px 14px 18px; }
   .p2-body{ padding:46px 14px 18px; }
   .sg{ grid-template-columns:1fr; }
@@ -638,9 +671,10 @@ body{
   .scene{ height:160px; }
   .p1-tagline{ font-size:13px; }
   .photo-ring{ width:90px; height:90px; }
-  .p2-photo-zone{ margin-top:-8px; margin-bottom:-10px; }
+  .p2-photo-zone{ margin-top:-8px; margin-bottom:-10px; overflow:visible; }
   .p2-photo-ring{ width:84vw; max-width:360px; height:auto; aspect-ratio:1/1; border-radius:50%; overflow:visible; }
   .p2-photo-ring video{ object-fit:cover; border-radius:50%; }
+  .video-unmute-btn{ right:8px; bottom:8px; top:auto; padding:8px 10px; font-size:12px; }
   .rsvp{ flex-direction:column; align-items:stretch; text-align:center; gap:8px; }
   .rsvp-btn{ width:100%; }
   .forest-badges,.mini-note,.story-line{font-size:10px;}
@@ -1161,10 +1195,22 @@ body{
 
     <!-- Photo -->
     <div class="photo-zone">
-      <div class="photo-ring" id="photoFrame" onclick="document.getElementById('photoInput').click()">
-        <div class="ph-ph" id="ph1"><span class="ic">📸</span><p>Add Dhrithi's<br>photo or video here</p></div>
-        <img id="photoImg1" src="./media/mayday.jpg" alt="Dhrithi"/>
-        <video id="videoImg1" src="" autoplay muted loop playsinline controls style="display:none;"></video>
+      <div class="photo-ring-orbit" id="photoFrame" onclick="document.getElementById('photoInput').click()">
+        <div class="photo-ring">
+          <div class="ph-ph" id="ph1"><span class="ic">📸</span><p>Add Dhrithi's<br>photo or video here</p></div>
+          <img id="photoImg1" src="./media/mayday.jpg" alt="Dhrithi"/>
+          <video id="videoImg1" src="" autoplay muted loop playsinline controls style="display:none;"></video>
+        </div>
+        <div class="orbit-trail" aria-hidden="true">
+          <span class="orbit-sparkle"></span>
+          <span class="orbit-sparkle"></span>
+          <span class="orbit-sparkle"></span>
+          <span class="orbit-sparkle"></span>
+          <span class="orbit-sparkle"></span>
+          <span class="orbit-sparkle"></span>
+          <span class="orbit-sparkle"></span>
+          <span class="orbit-sparkle"></span>
+        </div>
       </div>
     </div>
     <input type="file" id="photoInput" accept="image/*,video/*">
@@ -1415,8 +1461,9 @@ body{
 
   <div class="p2-photo-zone">
     <div class="p2-photo-ring">
+      <button id="unmuteBtn2" class="video-unmute-btn" type="button" aria-label="Unmute video">🔊 Unmute</button>
       <img id="photoImg2" src="" alt="Dhrithi"/>
-      <video id="videoImg2" src="./media/hi1 - Trim.mp4" muted loop playsinline controls style="display:block;"></video>
+      <video id="videoImg2" src="./media/hi1 - Trim.mp4" muted loop playsinline webkit-playsinline controls style="display:block;"></video>
     </div>
   </div>
 
@@ -1643,6 +1690,25 @@ document.getElementById('photoInput').addEventListener('change',function(e){
 });
 
 const v2=document.getElementById('videoImg2');
+const unmuteBtn2=document.getElementById('unmuteBtn2');
+if(unmuteBtn2 && v2){
+  const setMuteState = (muted) => {
+    v2.muted = muted;
+    v2.volume = muted ? 0 : 1;
+    unmuteBtn2.textContent = muted ? '🔊 Unmute' : '🔈 Mute';
+    unmuteBtn2.setAttribute('aria-label', muted ? 'Unmute video' : 'Mute video');
+  };
+
+  setMuteState(true);
+
+  unmuteBtn2.addEventListener('click', () => {
+    const shouldMute = !v2.muted;
+    setMuteState(shouldMute);
+    if (!shouldMute) {
+      v2.play().catch(()=>{});
+    }
+  });
+}
 if(v2 && 'IntersectionObserver' in window){
   let hasPlayedOnce=false;
   const io=new IntersectionObserver(entries=>{
