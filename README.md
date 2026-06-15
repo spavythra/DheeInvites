@@ -33,3 +33,35 @@ DheeInvites/
 ├── media/       # photos and video clips used in the invite
 └── README.md
 ```
+
+## Event Details
+
+| | |
+|---|---|
+| **Who** | Dhrithi turns 2 🎂 |
+| **Date** | July 4, 2026 |
+| **Time** | 17:00 – 19:00 |
+| **Venue** | Jussilankulma 1 B7, 33580 Tampere |
+
+## Running Locally
+
+Open `index.html` directly in any modern browser — no server required.
+
+```bash
+# macOS / Linux
+open index.html
+
+# Windows
+start index.html
+```
+
+For accurate video playback, serve from a local HTTP server:
+
+```bash
+npx serve .
+# then visit http://localhost:3000
+```
+
+## Deployment
+
+The invite is a static file and can be hosted on any static host (GitHub Pages, Netlify, Vercel, or a simple file share). Upload `index.html` and the `media/` folder together, preserving the relative path.
