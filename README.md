@@ -109,17 +109,6 @@ Tests cover:
 
 ---
 
-## Event details
-
-| | |
-|---|---|
-| **Who** | Dhrithi turns 2 🎂 |
-| **Date** | July 4, 2026 |
-| **Time** | 17:00 – 19:00 |
-| **Venue** | Jussilankulma 1 B7, 33580 Tampere |
-
----
-
 ## Deployment
 
 Hosted on **Vercel** — auto-deploys on push to `main`.
