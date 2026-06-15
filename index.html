@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dhrithi Turns 2 · Summer Forest Birthday</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+<script src="event.config.js"></script>
 <style>
 /* ═══════════════════════════════════════
    SUMMER FOREST · EXCAVATOR · PANDA
@@ -721,9 +722,32 @@ transform: translateY(-50%);}
   .flip-hint p{ font-size:11px; }
   .pg-label{ font-size:9px; letter-spacing:3px; }
 }
+
+/* ── LANGUAGE TOGGLE ── */
+.lang-pill{position:fixed;top:12px;right:12px;z-index:999;}
+.lang-pill button{
+  font-family:'Inter',sans-serif;font-size:10px;font-weight:700;
+  letter-spacing:1.5px;text-transform:uppercase;
+  border:1px solid rgba(46,107,62,.35);
+  background:rgba(255,255,255,.92);color:var(--forest);
+  padding:5px 13px;border-radius:20px;cursor:pointer;
+  backdrop-filter:blur(6px);
+  box-shadow:0 2px 8px rgba(0,0,0,.1);
+  transition:background .15s,box-shadow .15s;
+}
+.lang-pill button:hover{background:var(--forest-ll);box-shadow:0 4px 12px rgba(0,0,0,.15);}
+
+/* Bilingual span visibility */
+html[lang="en"] .t-fi,
+html[lang="en"] .t-sep { display:none; }
+html[lang="fi"] .t-en,
+html[lang="fi"] .t-sep { display:none; }
 </style>
 </head>
 <body>
+<div class="lang-pill">
+  <button id="langBtn" aria-label="Switch language">🇫🇮 FI</button>
+</div>
 
 <script>
 // ── Dhrithi's world — WhatsApp-style tiled background ──
@@ -1213,13 +1237,13 @@ transform: translateY(-50%);}
   <!-- Hero -->
   <div class="hero">
     <div class="hero-inner">
-      <div class="h-pretag">Syntymäpäiväkutsu · Birthday Invitation</div>
-      <div class="h-name">Dhrithi</div>
+      <div class="h-pretag"><span class="t-fi">Syntymäpäiväkutsu</span><span class="t-sep"> · </span><span class="t-en">Birthday Invitation</span></div>
+      <div class="h-name" id="cfg-name">Dhrithi</div>
       <div class="h-tagline">Tampere, Finland · 2026</div>
       <div class="h-age-row">
         <div class="h-line"></div>
-        <div class="age-ring">2</div>
-        <div class="h-age-text">Vuotta · Years</div>
+        <div class="age-ring" id="cfg-age">2</div>
+        <div class="h-age-text"><span class="t-fi">Vuotta</span><span class="t-sep"> · </span><span class="t-en">Years</span></div>
         <div class="h-line"></div>
       </div>
     </div>
@@ -1415,9 +1439,9 @@ transform: translateY(-50%);}
     <div class="forest-badges">🐝 Bees · 🐼 Panda · 🚜 Excavator · 🌲 Forest</div>
 
     <div class="det-grid">
-      <div class="det"><div class="d-ic">📅</div><div class="d-lb">Päivämäärä · Date</div><div class="d-vl">July 4, 2026</div></div>
-      <div class="det"><div class="d-ic">⏰</div><div class="d-lb">Aika · Time</div><div class="d-vl">17:00 – 19:00</div></div>
-      <div class="det full-det"><div class="d-ic">📍</div><div class="d-lb">Paikka · Venue</div><div class="d-vl">Jussilankulma 1 B7,<br>33580 Tampere &nbsp;·&nbsp;</div></div>
+      <div class="det"><div class="d-ic">📅</div><div class="d-lb"><span class="t-fi">Päivämäärä</span><span class="t-sep"> · </span><span class="t-en">Date</span></div><div class="d-vl" id="cfg-date">July 4, 2026</div></div>
+      <div class="det"><div class="d-ic">⏰</div><div class="d-lb"><span class="t-fi">Aika</span><span class="t-sep"> · </span><span class="t-en">Time</span></div><div class="d-vl" id="cfg-time">17:00 – 19:00</div></div>
+      <div class="det full-det"><div class="d-ic">📍</div><div class="d-lb"><span class="t-fi">Paikka</span><span class="t-sep"> · </span><span class="t-en">Venue</span></div><div class="d-vl" id="cfg-venue">Jussilankulma 1 B7,<br>33580 Tampere</div></div>
     </div>
 
     <div class="nordic-div"><div class="nd-line"></div><div class="nd-sym">✦ ✦ ✦</div><div class="nd-line"></div></div>
@@ -1523,8 +1547,6 @@ transform: translateY(-50%);}
   <div class="p2-body">
     <div class="diary-intro">
       <em>Spoiler: there's no such thing as "normal."</em>
-      <div class="story-chip">Bees, butterflies, panda paws, and one very determined excavator all show up here.</div>
-      <p class="story-line">The forest theme grows with every detail — tiny insects, soft animals, and an excavator that still steals the show.</p>
     </div>
 
     <div class="diary">
@@ -1776,6 +1798,35 @@ if(v2 && 'IntersectionObserver' in window){
   },{threshold:0.35});
   io.observe(v2);
 }
+
+// Config injection — populate event data from event.config.js
+if (typeof EVENT_CONFIG !== 'undefined') {
+  const set = (id, val, html) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    html ? (el.innerHTML = val) : (el.textContent = val);
+  };
+  set('cfg-name',  EVENT_CONFIG.child.name);
+  set('cfg-age',   EVENT_CONFIG.child.age);
+  set('cfg-date',  EVENT_CONFIG.event.date);
+  set('cfg-time',  EVENT_CONFIG.event.time);
+  set('cfg-venue', EVENT_CONFIG.event.venue, true);
+  const link = document.getElementById('cfg-maps');
+  if (link) link.href = EVENT_CONFIG.event.mapsUrl;
+}
+
+// Language toggle — Finnish ↔ English
+(function () {
+  const btn = document.getElementById('langBtn');
+  if (!btn) return;
+  btn.addEventListener('click', () => {
+    const html = document.documentElement;
+    const goEn = html.lang !== 'en';
+    html.lang = goEn ? 'en' : 'fi';
+    btn.textContent = goEn ? '🇫🇮 FI' : '🇬🇧 EN';
+    btn.setAttribute('aria-label', goEn ? 'Vaihda suomeksi' : 'Switch to English');
+  });
+})();
 
 // Sparkles — use Nordic palette
 ['sp1','sp2','sp3'].forEach(id=>{
