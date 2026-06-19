@@ -149,6 +149,14 @@ body{
   text-shadow:2px 2px 0 rgba(255,255,255,.4), 0 4px 16px rgba(0,0,0,.1);
   animation:nameIn .8s .3s cubic-bezier(.22,.68,0,1.2) both;
 }
+.h-nickname{
+  font-family:'Inter',sans-serif;font-weight:400;
+  font-size:14px;letter-spacing:.5px;
+  color:var(--forest-m);
+  font-style:italic;
+  margin-top:6px;
+  animation:fadeUp .6s .45s both;
+}
 .h-tagline{
   font-family:'Inter',sans-serif;font-weight:400;
   font-size:13px;letter-spacing:2px;text-transform:uppercase;
@@ -156,6 +164,15 @@ body{
   margin-top:8px;
   animation:fadeUp .6s .5s both;
 }
+.det-tz{
+  font-size:10px;letter-spacing:1px;color:var(--smoke);
+  font-weight:400;margin-top:3px;
+}
+.meet-link{
+  color:var(--forest);font-weight:600;font-size:13px;
+  text-decoration:none;border-bottom:1px solid var(--forest-l);
+}
+.meet-link:hover{border-bottom-color:var(--forest);}
 .h-age-row{
   display:flex;align-items:center;justify-content:center;gap:14px;
   margin-top:14px;
@@ -1239,6 +1256,7 @@ html[lang="fi"] .t-sep { display:none; }
     <div class="hero-inner">
       <div class="h-pretag"><span class="t-fi">Syntymäpäiväkutsu</span><span class="t-sep"> · </span><span class="t-en">Birthday Invitation</span></div>
       <div class="h-name" id="cfg-name">Dhrithi</div>
+      <div class="h-nickname" id="cfg-nickname">our little Dhrithi mayilu 🦚</div>
       <div class="h-tagline">Tampere, Finland · 2026</div>
       <div class="h-age-row">
         <div class="h-line"></div>
@@ -1436,12 +1454,13 @@ html[lang="fi"] .t-sep { display:none; }
       <em>Come celebrate our little summer explorer.</em>
     </div>
 
-    <div class="forest-badges">🐝 Bees · 🐼 Panda · 🚜 Excavator · 🌲 Forest</div>
+    <div class="forest-badges">🐝 Bees · 🐼 Panda · 🚜 Excavator · 🌲 Forest · 🐨 Koala dress always</div>
 
     <div class="det-grid">
       <div class="det"><div class="d-ic">📅</div><div class="d-lb"><span class="t-fi">Päivämäärä</span><span class="t-sep"> · </span><span class="t-en">Date</span></div><div class="d-vl" id="cfg-date">July 4, 2026</div></div>
-      <div class="det"><div class="d-ic">⏰</div><div class="d-lb"><span class="t-fi">Aika</span><span class="t-sep"> · </span><span class="t-en">Time</span></div><div class="d-vl" id="cfg-time">17:00 – 19:00</div></div>
+      <div class="det"><div class="d-ic">⏰</div><div class="d-lb"><span class="t-fi">Aika</span><span class="t-sep"> · </span><span class="t-en">Time</span></div><div class="d-vl" id="cfg-time">17:00 – 19:00</div><div class="det-tz" id="cfg-timezone">EEST · Tampere time</div></div>
       <div class="det full-det"><div class="d-ic">📍</div><div class="d-lb"><span class="t-fi">Paikka</span><span class="t-sep"> · </span><span class="t-en">Venue</span></div><div class="d-vl" id="cfg-venue">Jussilankulma 1 B7,<br>33580 Tampere</div></div>
+      <div class="det full-det" id="cfg-meet-row" style="display:none"><div class="d-ic">📹</div><div><div class="d-lb"><span class="t-fi">Liity verkossa</span><span class="t-sep"> · </span><span class="t-en">Join Online</span></div><div class="d-vl"><a id="cfg-meet-link" href="#" target="_blank" rel="noopener" class="meet-link">Join on Google Meet →</a></div></div></div>
     </div>
 
     <div class="nordic-div"><div class="nd-line"></div><div class="nd-sym">✦ ✦ ✦</div><div class="nd-line"></div></div>
@@ -1556,6 +1575,14 @@ html[lang="fi"] .t-sep { display:none; }
         <div class="diary-text">
           A voice at the window: <strong>"Moi moi, Akkuli!!"</strong> An excavator (her word, we've stopped fighting it) sits outside our window, doing nothing. She waves it in like a landing strip. It leaves. <strong>"Heippa!!"</strong> 😭 She demands it return. It doesn't.<br><br>
           Mission accomplished, she turns to the next task: <strong>"Wake up Daddy!"</strong> 📣 Delivered directly into his ear, at a volume that makes the excavator look subtle. 😴➡️😱
+        </div>
+      </div>
+
+      <div class="diary-entry lake">
+        <div class="diary-time">07:30 · The Wardrobe</div>
+        <div class="diary-text">
+          Koala dress. 🐨 Full stop.<br><br>
+          There are seventeen other outfits. They don't exist. The koala dress is washed, dried, hung — and waiting. <em>On days it isn't ready in time, negotiations begin.</em> There are no successful negotiations. We have a backup koala dress now. <strong>Yes, a backup koala dress.</strong> 😂
         </div>
       </div>
 
@@ -1806,13 +1833,21 @@ if (typeof EVENT_CONFIG !== 'undefined') {
     if (!el) return;
     html ? (el.innerHTML = val) : (el.textContent = val);
   };
-  set('cfg-name',  EVENT_CONFIG.child.name);
-  set('cfg-age',   EVENT_CONFIG.child.age);
-  set('cfg-date',  EVENT_CONFIG.event.date);
-  set('cfg-time',  EVENT_CONFIG.event.time);
-  set('cfg-venue', EVENT_CONFIG.event.venue, true);
-  const link = document.getElementById('cfg-maps');
-  if (link) link.href = EVENT_CONFIG.event.mapsUrl;
+  set('cfg-name',     EVENT_CONFIG.child.name);
+  if (EVENT_CONFIG.child.nickname) set('cfg-nickname', EVENT_CONFIG.child.nickname);
+  set('cfg-age',      EVENT_CONFIG.child.age);
+  set('cfg-date',     EVENT_CONFIG.event.date);
+  set('cfg-time',     EVENT_CONFIG.event.time);
+  if (EVENT_CONFIG.event.timezone) set('cfg-timezone', EVENT_CONFIG.event.timezone);
+  set('cfg-venue',    EVENT_CONFIG.event.venue, true);
+  const mapsLink = document.getElementById('cfg-maps');
+  if (mapsLink) mapsLink.href = EVENT_CONFIG.event.mapsUrl;
+  if (EVENT_CONFIG.event.meetUrl) {
+    const meetRow  = document.getElementById('cfg-meet-row');
+    const meetLink = document.getElementById('cfg-meet-link');
+    if (meetRow)  meetRow.style.display  = '';
+    if (meetLink) meetLink.href = EVENT_CONFIG.event.meetUrl;
+  }
 }
 
 // Language toggle — Finnish ↔ English
