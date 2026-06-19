@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -156,6 +156,11 @@ body{
   font-style:italic;
   margin-top:6px;
   animation:fadeUp .6s .45s both;
+}
+.h-nick-attr{
+  font-size:11px;font-style:normal;font-weight:500;
+  color:var(--smoke);letter-spacing:.5px;
+  white-space:nowrap;
 }
 .h-tagline{
   font-family:'Inter',sans-serif;font-weight:400;
@@ -754,11 +759,16 @@ transform: translateY(-50%);}
 }
 .lang-pill button:hover{background:var(--forest-ll);box-shadow:0 4px 12px rgba(0,0,0,.15);}
 
-/* Bilingual span visibility */
-html[lang="en"] .t-fi,
-html[lang="en"] .t-sep { display:none; }
+/* Tri-lingual span visibility — fi / en / ta */
 html[lang="fi"] .t-en,
-html[lang="fi"] .t-sep { display:none; }
+html[lang="fi"] .t-sep,
+html[lang="fi"] .t-ta  { display:none; }
+html[lang="en"] .t-fi,
+html[lang="en"] .t-sep,
+html[lang="en"] .t-ta  { display:none; }
+html[lang="ta"] .t-fi,
+html[lang="ta"] .t-en,
+html[lang="ta"] .t-sep { display:none; }
 </style>
 </head>
 <body>
@@ -1254,14 +1264,14 @@ html[lang="fi"] .t-sep { display:none; }
   <!-- Hero -->
   <div class="hero">
     <div class="hero-inner">
-      <div class="h-pretag"><span class="t-fi">Syntymäpäiväkutsu</span><span class="t-sep"> · </span><span class="t-en">Birthday Invitation</span></div>
+      <div class="h-pretag"><span class="t-fi">Syntymäpäiväkutsu</span><span class="t-sep"> · </span><span class="t-en">Birthday Invitation</span><span class="t-sep"> · </span><span class="t-ta">பிறந்தநாள் அழைப்பிதழ்</span></div>
       <div class="h-name" id="cfg-name">Dhrithi</div>
-      <div class="h-nickname" id="cfg-nickname">our little Dhrithi mayilu 🦚</div>
+      <div class="h-nickname">"<span id="cfg-nickname">Dhrithi mayilu</span>" <span class="h-nick-attr">— her own words 🦚</span></div>
       <div class="h-tagline">Tampere, Finland · 2026</div>
       <div class="h-age-row">
         <div class="h-line"></div>
         <div class="age-ring" id="cfg-age">2</div>
-        <div class="h-age-text"><span class="t-fi">Vuotta</span><span class="t-sep"> · </span><span class="t-en">Years</span></div>
+        <div class="h-age-text"><span class="t-fi">Vuotta</span><span class="t-sep"> · </span><span class="t-en">Years</span><span class="t-sep"> · </span><span class="t-ta">வயது</span></div>
         <div class="h-line"></div>
       </div>
     </div>
@@ -1457,10 +1467,10 @@ html[lang="fi"] .t-sep { display:none; }
     <div class="forest-badges">🐝 Bees · 🐼 Panda · 🚜 Excavator · 🌲 Forest · 🐨 Koala dress always</div>
 
     <div class="det-grid">
-      <div class="det"><div class="d-ic">📅</div><div class="d-lb"><span class="t-fi">Päivämäärä</span><span class="t-sep"> · </span><span class="t-en">Date</span></div><div class="d-vl" id="cfg-date">July 4, 2026</div></div>
-      <div class="det"><div class="d-ic">⏰</div><div class="d-lb"><span class="t-fi">Aika</span><span class="t-sep"> · </span><span class="t-en">Time</span></div><div class="d-vl" id="cfg-time">17:00 – 19:00</div><div class="det-tz" id="cfg-timezone">EEST · Tampere time</div></div>
-      <div class="det full-det"><div class="d-ic">📍</div><div class="d-lb"><span class="t-fi">Paikka</span><span class="t-sep"> · </span><span class="t-en">Venue</span></div><div class="d-vl" id="cfg-venue">Jussilankulma 1 B7,<br>33580 Tampere</div></div>
-      <div class="det full-det" id="cfg-meet-row" style="display:none"><div class="d-ic">📹</div><div><div class="d-lb"><span class="t-fi">Liity verkossa</span><span class="t-sep"> · </span><span class="t-en">Join Online</span></div><div class="d-vl"><a id="cfg-meet-link" href="#" target="_blank" rel="noopener" class="meet-link">Join on Google Meet →</a></div></div></div>
+      <div class="det"><div class="d-ic">📅</div><div class="d-lb"><span class="t-fi">Päivämäärä</span><span class="t-sep"> · </span><span class="t-en">Date</span><span class="t-sep"> · </span><span class="t-ta">தேதி</span></div><div class="d-vl" id="cfg-date">July 4, 2026</div></div>
+      <div class="det"><div class="d-ic">⏰</div><div class="d-lb"><span class="t-fi">Aika</span><span class="t-sep"> · </span><span class="t-en">Time</span><span class="t-sep"> · </span><span class="t-ta">நேரம்</span></div><div class="d-vl" id="cfg-time">17:00 – 19:00</div><div class="det-tz" id="cfg-timezone">EEST · Tampere time</div></div>
+      <div class="det full-det"><div class="d-ic">📍</div><div class="d-lb"><span class="t-fi">Paikka</span><span class="t-sep"> · </span><span class="t-en">Venue</span><span class="t-sep"> · </span><span class="t-ta">இடம்</span></div><div class="d-vl" id="cfg-venue">Jussilankulma 1 B7,<br>33580 Tampere</div></div>
+      <div class="det full-det" id="cfg-meet-row" style="display:none"><div class="d-ic">📹</div><div><div class="d-lb"><span class="t-fi">Liity verkossa</span><span class="t-sep"> · </span><span class="t-en">Join Online</span><span class="t-sep"> · </span><span class="t-ta">நேரடியாக இணைவு</span></div><div class="d-vl"><a id="cfg-meet-link" href="#" target="_blank" rel="noopener" class="meet-link">Join on Google Meet →</a></div></div></div>
     </div>
 
     <div class="nordic-div"><div class="nd-line"></div><div class="nd-sym">✦ ✦ ✦</div><div class="nd-line"></div></div>
@@ -1477,7 +1487,6 @@ html[lang="fi"] .t-sep { display:none; }
   <div class="p1-foot">
     <span class="fe">🍓  🍌  🧀  🌲  🐼  🚜  🐝  ✦</span>
     <div class="fl">She turned one. We survived. She's turning two. Send help. 👑</div>
-    <div class="mini-pill">🐝🐼🚜 forest fun all the way</div>
   </div>
 
   <div class="balloons" id="b1"></div>
@@ -1531,7 +1540,6 @@ html[lang="fi"] .t-sep { display:none; }
   <div class="sparkles" id="sp2"></div>
 
   <div class="p2-hero">
-    <div class="p2-pretag">⭐ Vieraana kunniassa · Guest of Honour ⭐</div>
     <div class="p2-title">So — who exactly is Dhrithi?</div>
     <div class="p2-sub">A normal day. Buckle up. 😄</div>
     <!-- <div class="story-chip">Panda cuddles, bee buzz, and excavator energy all belong in this birthday story.</div> -->
@@ -1850,16 +1858,23 @@ if (typeof EVENT_CONFIG !== 'undefined') {
   }
 }
 
-// Language toggle — Finnish ↔ English
+// Language toggle — Finnish → English → Tamil → Finnish
 (function () {
   const btn = document.getElementById('langBtn');
   if (!btn) return;
+  const next  = { fi: 'en',        en: 'ta',                  ta: 'fi' };
+  const label = { fi: '🇫🇮 FI',   en: '🇬🇧 EN',            ta: '🇮🇳 தமிழ்' };
+  const aria  = { fi: 'Vaihda suomeksi', en: 'Switch to English', ta: 'தமிழில் மாற்று' };
+  const sync = (lang) => {
+    btn.textContent = label[lang] || label.fi;
+    btn.setAttribute('aria-label', aria[lang] || aria.fi);
+  };
+  sync(document.documentElement.lang || 'fi');
   btn.addEventListener('click', () => {
     const html = document.documentElement;
-    const goEn = html.lang !== 'en';
-    html.lang = goEn ? 'en' : 'fi';
-    btn.textContent = goEn ? '🇫🇮 FI' : '🇬🇧 EN';
-    btn.setAttribute('aria-label', goEn ? 'Vaihda suomeksi' : 'Switch to English');
+    const to = next[html.lang] || 'en';
+    html.lang = to;
+    sync(to);
   });
 })();
 

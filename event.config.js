@@ -9,8 +9,8 @@
 const EVENT_CONFIG = {
   child: {
     name: 'Dhrithi',
-    /** Affectionate nickname shown as a subtitle below the main name */
-    nickname: 'our little Dhrithi mayilu 🦚',
+    /** The name she calls herself — displayed as a quote in the hero */
+    nickname: 'Dhrithi mayilu',
     age: 2,
   },
   event: {
