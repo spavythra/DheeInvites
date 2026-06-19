@@ -1275,7 +1275,7 @@ html[lang="ta"] .t-ta-blk { display:block; }
     <div class="hero-inner">
       <div class="h-pretag"><span class="t-fi">Syntymäpäiväkutsu</span><span class="t-sep"> · </span><span class="t-en">Birthday Invitation</span><span class="t-sep"> · </span><span class="t-ta">பிறந்தநாள் அழைப்பிதழ்</span></div>
       <div class="h-name" id="cfg-name">Dhrithi</div>
-      <div class="h-nickname">"<span id="cfg-nickname">Dhrithi mayilu</span>" <span class="h-nick-attr t-main">— her own words 🦚</span><span class="h-nick-attr t-ta">— அவளே சொல்வாள் 🦚</span></div>
+
       <div class="h-tagline">Tampere, Finland · 2026</div>
       <div class="h-age-row">
         <div class="h-line"></div>
@@ -1480,7 +1480,7 @@ html[lang="ta"] .t-ta-blk { display:block; }
     <div class="det-grid">
       <div class="det"><div class="d-ic">📅</div><div class="d-lb"><span class="t-fi">Päivämäärä</span><span class="t-sep"> · </span><span class="t-en">Date</span><span class="t-sep"> · </span><span class="t-ta">தேதி</span></div><div class="d-vl" id="cfg-date">July 4, 2026</div></div>
       <div class="det"><div class="d-ic">⏰</div><div class="d-lb"><span class="t-fi">Aika</span><span class="t-sep"> · </span><span class="t-en">Time</span><span class="t-sep"> · </span><span class="t-ta">நேரம்</span></div><div class="d-vl" id="cfg-time">17:00 – 19:00</div><div class="det-tz" id="cfg-timezone">EEST · Tampere time</div></div>
-      <div class="det full-det"><div class="d-ic">📍</div><div class="d-lb"><span class="t-fi">Paikka</span><span class="t-sep"> · </span><span class="t-en">Venue</span><span class="t-sep"> · </span><span class="t-ta">இடம்</span></div><div class="d-vl" id="cfg-venue">Jussilankulma 1 B7,33580 Tampere</div></div>
+      <div class="det full-det"><div class="d-ic">📍</div><div class="d-lb"><span class="t-fi">Paikka</span><span class="t-sep"> · </span><span class="t-en">Venue</span><span class="t-sep"> · </span><span class="t-ta">இடம்</span></div><div class="d-vl" id="cfg-venue">Jussilankulma 1 B7, 33580 Tampere</div></div>
       <div class="det full-det" id="cfg-meet-row" style="display:none"><div class="d-ic">📹</div><div><div class="d-lb"><span class="t-fi">Liity verkossa</span><span class="t-sep"> · </span><span class="t-en">Join Online</span><span class="t-sep"> · </span><span class="t-ta">நேரடியாக இணைவு</span></div><div class="d-vl"><a id="cfg-meet-link" href="#" target="_blank" rel="noopener" class="meet-link">Join on Google Meet →</a></div></div></div>
     </div>
 
@@ -1904,7 +1904,6 @@ if (typeof EVENT_CONFIG !== 'undefined') {
     html ? (el.innerHTML = val) : (el.textContent = val);
   };
   set('cfg-name',     EVENT_CONFIG.child.name);
-  if (EVENT_CONFIG.child.nickname) set('cfg-nickname', EVENT_CONFIG.child.nickname);
   set('cfg-age',      EVENT_CONFIG.child.age);
   set('cfg-date',     EVENT_CONFIG.event.date);
   set('cfg-time',     EVENT_CONFIG.event.time);

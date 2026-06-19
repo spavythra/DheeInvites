@@ -9,8 +9,7 @@
 const EVENT_CONFIG = {
   child: {
     name: 'Dhrithi',
-    /** The name she calls herself — displayed as a quote in the hero */
-    nickname: 'Dhrithi mayilu',
+
     age: 2,
   },
   event: {
@@ -21,7 +20,7 @@ const EVENT_CONFIG = {
     /** Timezone label shown below the time — Finland is EEST (UTC+3) in summer */
     timezone: 'EEST · Tampere time',
     /** HTML allowed — use <br> for line breaks */
-    venue: 'Jussilankulma 1 B7,<br>33580 Tampere',
+    venue: 'Jussilankulma 1 B7, 33580 Tampere',
     /** Google Maps or any map URL */
     mapsUrl: 'https://maps.google.com/?q=Jussilankulma+1+B7+Tampere+Finland',
     /** Google Meet or video call URL — leave empty to hide the row */
