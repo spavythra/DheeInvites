@@ -769,6 +769,15 @@ html[lang="en"] .t-ta  { display:none; }
 html[lang="ta"] .t-fi,
 html[lang="ta"] .t-en,
 html[lang="ta"] .t-sep { display:none; }
+/* Full-content Tamil blocks */
+html[lang="ta"] .t-main { display:none; }
+.t-ta-blk { display:none; }
+html[lang="ta"] .t-ta-blk { display:block; }
+/* Ice cream closure */
+.ice-closure{display:flex;flex-direction:column;align-items:center;text-align:center;padding:20px 18px 14px;margin:16px 0 8px;background:var(--berry-l);border-radius:2px;border:1px solid rgba(212,74,106,.2);}
+.ice-closure .ice-emoji{font-size:32px;margin-bottom:10px;}
+.ice-closure .ice-text{font-size:13px;line-height:1.7;color:var(--ink);}
+.ice-closure em{color:var(--berry);font-style:normal;}
 </style>
 </head>
 <body>
@@ -1216,7 +1225,7 @@ html[lang="ta"] .t-sep { display:none; }
   document.body.style.backgroundSize = `${S}px ${S}px`;
 })();
 </script>
-<div class="pg-label">Syntymäpäiväkutsu · Page One</div>
+<div class="pg-label"><span class="t-main">Syntymäpäiväkutsu · Page One</span><span class="t-ta">பிறந்தநாள் அழைப்பிதழ் · முதல் பக்கம்</span></div>
 
 <div class="card" id="card1">
   <div class="sparkles" id="sp1"></div>
@@ -1266,7 +1275,7 @@ html[lang="ta"] .t-sep { display:none; }
     <div class="hero-inner">
       <div class="h-pretag"><span class="t-fi">Syntymäpäiväkutsu</span><span class="t-sep"> · </span><span class="t-en">Birthday Invitation</span><span class="t-sep"> · </span><span class="t-ta">பிறந்தநாள் அழைப்பிதழ்</span></div>
       <div class="h-name" id="cfg-name">Dhrithi</div>
-      <div class="h-nickname">"<span id="cfg-nickname">Dhrithi mayilu</span>" <span class="h-nick-attr">— her own words 🦚</span></div>
+      <div class="h-nickname">"<span id="cfg-nickname">Dhrithi mayilu</span>" <span class="h-nick-attr t-main">— her own words 🦚</span><span class="h-nick-attr t-ta">— அவளே சொல்வாள் 🦚</span></div>
       <div class="h-tagline">Tampere, Finland · 2026</div>
       <div class="h-age-row">
         <div class="h-line"></div>
@@ -1460,11 +1469,13 @@ html[lang="ta"] .t-sep { display:none; }
   <div class="p1-body">
 
     <div class="p1-tagline">
-      Two years of pure joy, wild curiosity &amp; forest magic.<br>
-      <em>Come celebrate our little summer explorer.</em>
+      <span class="t-main">Two years of pure joy, wild curiosity &amp; forest magic.<br>
+      <em>Come celebrate our little summer explorer.</em></span>
+      <span class="t-ta-blk">இரண்டு ஆண்டுகள் நிறைந்த மகிழ்ச்சி, காட்டு ஆர்வம் &amp; வன மந்திரம்.<br>
+      <em>நம் சின்ன கோடை ஆராய்ச்சியாளரின் பிறந்தநாளை கொண்டாட வாருங்கள்.</em></span>
     </div>
 
-    <div class="forest-badges">🐝 Bees · 🐼 Panda · 🚜 Excavator · 🌲 Forest · 🐨 Koala dress always</div>
+    <div class="forest-badges"><span class="t-main">🐝 Bees · 🐼 Panda · 🚜 Excavator · 🌲 Forest · 🐨 Koala dress always</span><span class="t-ta">🐝 தேனீக்கள் · 🐼 பாண்டா · 🚜 எக்ஸ்கவேட்டர் · 🌲 காடு · 🐨 கோலா டிரஸ் எப்போதும்</span></div>
 
     <div class="det-grid">
       <div class="det"><div class="d-ic">📅</div><div class="d-lb"><span class="t-fi">Päivämäärä</span><span class="t-sep"> · </span><span class="t-en">Date</span><span class="t-sep"> · </span><span class="t-ta">தேதி</span></div><div class="d-vl" id="cfg-date">July 4, 2026</div></div>
@@ -1475,18 +1486,20 @@ html[lang="ta"] .t-sep { display:none; }
 
     <div class="nordic-div"><div class="nd-line"></div><div class="nd-sym">✦ ✦ ✦</div><div class="nd-line"></div></div>
 
-    <div class="mini-note">A tiny insect buzz, a panda cuddle, and an excavator mood make this invite feel like a real forest party.</div>
+    <div class="mini-note"><span class="t-main">A tiny insect buzz, a panda cuddle, and an excavator mood make this invite feel like a real forest party.</span><span class="t-ta">சின்னதொரு பூச்சி சத்தம், ஒரு பாண்டா அணைப்பு, ஒரு எக்ஸ்கவேட்டர் மனநிலை — இந்த அழைப்பிதழை ஒரு உண்மையான வன விழாவாக உணர வைக்கிறது.</span></div>
 
     <div class="flip-hint">
       <div class="fi">👀</div>
-      <p><strong>Want to know her better before you arrive?</strong><br>
-      Two more pages — a peek into her world, and the people in it. 😄</p>
+      <span class="t-main"><p><strong>Want to know her better before you arrive?</strong><br>
+      Two more pages — a peek into her world, and the people in it. 😄</p></span>
+      <span class="t-ta-blk"><p><strong>நீங்கள் வருவதற்கு முன்பே அவளை நன்றாக அறிய விரும்புகிறீர்களா?</strong><br>
+      இன்னும் இரண்டு பக்கங்கள் — அவள் உலகின் ஒரு எட்டிப் பார்வை, அதில் உள்ள மனிதர்களும். 😄</p></span>
     </div>
   </div>
 
   <div class="p1-foot">
     <span class="fe">🍓  🍌  🧀  🌲  🐼  🚜  🐝  ✦</span>
-    <div class="fl">She turned one. We survived. She's turning two. Send help. 👑</div>
+    <div class="fl"><span class="t-main">She turned one. We survived. She's turning two. Send help. 👑</span><span class="t-ta">ஒரு வயதானாள். நாங்கள் தப்பித்தோம். இரண்டு வயதாகிறாள். உதவி அனுப்புங்கள். 👑</span></div>
   </div>
 
   <div class="balloons" id="b1"></div>
@@ -1496,7 +1509,7 @@ html[lang="ta"] .t-sep { display:none; }
 <!-- ══════════════════════════════════
      PAGE 2 — MEET DHRITHI
 ══════════════════════════════════ -->
-<div class="pg-label">Tapaa Dhrithi · Page Two</div>
+<div class="pg-label"><span class="t-main">Tapaa Dhrithi · Page Two</span><span class="t-ta">திருதியை சந்தியுங்கள் · இரண்டாம் பக்கம்</span></div>
 
 <div class="card p2" id="card2">
 
@@ -1540,8 +1553,8 @@ html[lang="ta"] .t-sep { display:none; }
   <div class="sparkles" id="sp2"></div>
 
   <div class="p2-hero">
-    <div class="p2-title">So — who exactly is Dhrithi?</div>
-    <div class="p2-sub">A normal day. Buckle up. 😄</div>
+    <div class="p2-title"><span class="t-main">So — who exactly is Dhrithi?</span><span class="t-ta-blk">சரி — திருதி சரியாக யார்?</span></div>
+    <div class="p2-sub"><span class="t-main">A normal day. Buckle up. 😄</span><span class="t-ta-blk">ஒரு சாதாரண நாள். தயாராகுங்கள். 😄</span></div>
     <!-- <div class="story-chip">Panda cuddles, bee buzz, and excavator energy all belong in this birthday story.</div> -->
   </div>
 
@@ -1573,84 +1586,93 @@ html[lang="ta"] .t-sep { display:none; }
 
   <div class="p2-body">
     <div class="diary-intro">
-      <em>Spoiler: there's no such thing as "normal."</em>
+      <span class="t-main"><em>Spoiler: there's no such thing as "normal."</em></span><span class="t-ta-blk"><em>முன்னறிவிப்பு: "சாதாரணம்" என்பது இங்கு இல்லவே இல்லை.</em></span>
     </div>
 
     <div class="diary">
 
       <div class="diary-entry">
-        <div class="diary-time">06:58</div>
+        <div class="diary-time"><span class="t-main">06:58</span><span class="t-ta">காலை 06:58</span></div>
         <div class="diary-text">
-          A voice at the window: <strong>"Moi moi, Akkuli!!"</strong> An excavator (her word, we've stopped fighting it) sits outside our window, doing nothing. She waves it in like a landing strip. It leaves. <strong>"Heippa!!"</strong> 😭 She demands it return. It doesn't.<br><br>
-          Mission accomplished, she turns to the next task: <strong>"Wake up Daddy!"</strong> 📣 Delivered directly into his ear, at a volume that makes the excavator look subtle. 😴➡️😱
+          <span class="t-main">A voice at the window: <strong>"Moi moi, Akkuli!!"</strong> An excavator (her word, we've stopped fighting it) sits outside our window, doing nothing. She waves it in like a landing strip. It leaves. <strong>"Heippa!!"</strong> 😭 She demands it return. It doesn't.<br><br>
+          Mission accomplished, she turns to the next task: <strong>"Wake up Daddy!"</strong> 📣 Delivered directly into his ear, at a volume that makes the excavator look subtle. 😴➡️😱</span>
+          <span class="t-ta-blk">ஜன்னலில் ஒரு குரல்: <strong>"மொய் மொய், அக்குலி!!"</strong> ஒரு எக்ஸ்கவேட்டர் (அவள் வார்த்தை — நாங்கள் சண்டை போடுவதை விட்டோம்) நம் ஜன்னலுக்கு வெளியே, ஒன்றும் செய்யாமல் நிற்கிறது. விமான தளம் போல் வரவழைக்கிறாள். அது போகிறது. <strong>"ஹெய்ப்பா!!"</strong> 😭 திரும்பி வரும்படி கோருகிறாள். அது வரவில்லை.<br><br>
+          வேலை முடிந்தது. அடுத்த பணி: <strong>"டாடியை எழுப்பு!"</strong> 📣 நேரடியாக காதில், எக்ஸ்கவேட்டரையும் வெட்கப்படுத்தும் சத்தத்தில். 😴➡️😱</span>
         </div>
       </div>
 
       <div class="diary-entry lake">
-        <div class="diary-time">07:30 · The Wardrobe</div>
+        <div class="diary-time"><span class="t-main">07:30 · The Wardrobe</span><span class="t-ta">07:30 · அலமாரி</span></div>
         <div class="diary-text">
-          Koala dress. 🐨 Full stop.<br><br>
-          There are seventeen other outfits. They don't exist. The koala dress is washed, dried, hung — and waiting. <em>On days it isn't ready in time, negotiations begin.</em> There are no successful negotiations. We have a backup koala dress now. <strong>Yes, a backup koala dress.</strong> 😂
+          <span class="t-main">Koala dress. 🐨 Full stop.<br><br>
+          There are seventeen other outfits. They don't exist. The koala dress is washed, dried, hung — and waiting. <em>On days it isn't ready in time, negotiations begin.</em> There are no successful negotiations. We have a backup koala dress now. <strong>Yes, a backup koala dress.</strong> 😂</span>
+          <span class="t-ta-blk">கோலா டிரஸ். 🐨 அவ்வளவுதான்.<br><br>
+          வேறு பதினேழு உடைகள் இருக்கின்றன. அவை இல்லவே இல்லை என்று கணக்கு. கோலா டிரஸ் துவைக்கப்பட்டு, உலர்த்தப்பட்டு, தொங்கவிடப்பட்டு — காத்திருக்கும். <em>சரியான நேரத்தில் தயாராக இல்லாத நாட்களில் பேச்சுவார்த்தை தொடங்கும்.</em> வெற்றிகரமான பேச்சுவார்த்தை என்பது இல்லவே இல்லை. இப்போது எங்களிடம் ஒரு ஸ்பேர் கோலா டிரஸ் இருக்கிறது. <strong>ஆமாம், ஒரு ஸ்பேர் கோலா டிரஸ்.</strong> 😂</span>
         </div>
       </div>
 
       <div class="diary-entry amber">
-        <div class="diary-time">08:15 · To Pomppu</div>
+        <div class="diary-time"><span class="t-main">08:15 · To Pomppu</span><span class="t-ta">08:15 · பும்புக்கு</span></div>
         <div class="diary-text">
-          Recently promoted from Touhula 🎓. On the way, every vehicle gets a full sound effect — planes get the arms-out treatment with <strong>her own jet engine noise</strong> 💨, trains get the rumble, bikes get an oddly accurate <em>vroom</em> 🏍️. Whatever's passing, she becomes its soundtrack.<br><br>
+          <span class="t-main">Recently promoted from Touhula 🎓. On the way, every vehicle gets a full sound effect — planes get the arms-out treatment with <strong>her own jet engine noise</strong> 💨, trains get the rumble, bikes get an oddly accurate <em>vroom</em> 🏍️. Whatever's passing, she becomes its soundtrack.<br><br>
           Also: first official school note arrived. She loved a friend so much, she bit them. 🦷💛 <em>Working on the distinction.</em> 😂<br><br>
-          And every day without fail — the panda soft toy 🐼 makes the journey too. Officially assigned school protector. Days protected: every single one. <em>We don't question the system.</em>
+          And every day without fail — the panda soft toy 🐼 makes the journey too. Officially assigned school protector. Days protected: every single one. <em>We don't question the system.</em></span>
+          <span class="t-ta-blk">டௌஹுலாவிலிருந்து பதவி உயர்வு பெற்றாள் 🎓. வழியில், ஒவ்வொரு வாகனமும் முழு ஒலி விளைவைப் பெறும் — விமானங்களுக்கு கைகள் விரிக்கப்பட்டு <strong>அவளின் சொந்த ஜெட் என்ஜின் சத்தம்</strong> 💨, ரயில்களுக்கு குலுக்கல் சத்தம், சைக்கிள்களுக்கு ஒரு சரியான <em>வ்ரூம்</em> 🏍️. எது கடந்தாலும், அவளே அதன் ஒலிப்பாதை ஆகிவிடுவாள்.<br><br>
+          மேலும்: முதல் அதிகாரப்பூர்வ பள்ளி குறிப்பு வந்தது. அவள் ஒரு நண்பரை மிகவும் நேசித்தாள், கடித்தாள். 🦷💛 <em>வித்தியாசம் கற்று வருகிறோம்.</em> 😂<br><br>
+          மேலும் ஒவ்வொரு நாளும் தவறாமல் — பாண்டா பொம்மை 🐼 பயணத்தில் சேர்கிறது. அதிகாரப்பூர்வமாக நியமிக்கப்பட்ட பள்ளி பாதுகாவலன். பாதுகாக்கப்பட்ட நாட்கள்: ஒவ்வொன்றும். <em>இந்த ஏற்பாட்டை நாங்கள் கேள்வி கேட்கவில்லை.</em></span>
         </div>
       </div>
 
       <div class="diary-entry">
-        <div class="diary-time">16:00 · Outside</div>
+        <div class="diary-time"><span class="t-main">16:00 · Outside</span><span class="t-ta">மாலை 16:00 · வெளியே</span></div>
         <div class="diary-text">
-          Two shifts outside, one inside (our idea, not hers). 🌱 Sand and soil — she isn't playing in the garden, <em>she is the garden.</em><br><br>
+          <span class="t-main">Two shifts outside, one inside (our idea, not hers). 🌱 Sand and soil — she isn't playing in the garden, <em>she is the garden.</em><br><br>
           The panda <em>soft toy</em> gets a sprint-and-hug like it owes rent 💛 — she's been away all day, it has held down the fort. The whole toy zoo then gets lined up for <strong>"JUMP!"</strong> 🫵 — none of them do, so she jumps for them. Then <strong>"Nykyu!!"</strong> = sleep, and they all drop at once. <em>Toys: obedient. Humans: still learning.</em> 😂<br><br>
           When she lands a jump properly — actually nails it — she stops, looks around, and declares: <strong>"Dhrithi mayilu, good job!"</strong> 👏 She is not waiting for your applause. She has already handled it. 🌟<br><br>
-          Other afternoon sports: pony ride 🐴 (one lap is never enough, all parties know this), and football — not passed to anyone, just little focused kicks, straight ahead, one at a time. ⚽ Both activities taken very seriously. No exceptions.
+          Other afternoon sports: pony ride 🐴 (one lap is never enough, all parties know this), and football — not passed to anyone, just little focused kicks, straight ahead, one at a time. ⚽ Both activities taken very seriously. No exceptions.</span>
+          <span class="t-ta-blk">இரண்டு ஷிஃப்ட் வெளியே, ஒன்று உள்ளே (நம் யோசனை, அவளுடையது அல்ல). 🌱 மண் மற்றும் மணல் — அவள் தோட்டத்தில் விளையாடுவதில்லை, <em>அவளே தோட்டம்.</em><br><br>
+          பாண்டா <em>பொம்மை</em> வீட்டிற்கு திரும்பியதும் ஒரு ஓட்டம் மற்றும் அணைப்பு பெறும் 💛 — அவள் நாள் முழுவதும் வெளியே இருந்தாள், பொம்மை காவல் காத்தது. பிறகு முழு பொம்மை சிட்டியகம் <strong>"ஜம்ப்!"</strong> என்று வரிசையாக நிறுத்தப்படும் 🫵 — யாரும் குதிக்கவில்லை, அதனால் அவளே அவர்களுக்காக குதிப்பாள். பிறகு <strong>"நிக்யூ!!"</strong> = தூக்கம், எல்லாரும் ஒரே நேரத்தில் விழுகிறார்கள். <em>பொம்மைகள்: கட்டுப்பாட்டில். மனிதர்கள்: இன்னும் கற்று வருகிறோம்.</em> 😂<br><br>
+          சரியாக குதித்தால் — கச்சிதமாக இறங்கினால் — அவள் நிறுத்தி, சுற்றும் முற்றும் பார்த்து அறிவிப்பாள்: <strong>"திருதி மயிலு, குட் ஜாப்!"</strong> 👏 அவள் உங்கள் கைதட்டலுக்காக காத்திருக்கவில்லை. அவளே முடித்து விட்டாள். 🌟<br><br>
+          மற்ற மாலை விளையாட்டுகள்: குதிரை சவாரி 🐴 (ஒரு சுற்று போதாது, எல்லாருக்கும் தெரியும்), மற்றும் கால்பந்து — யாருக்கும் அல்ல, நேர்கோட்டில் சின்னச் சின்ன கிக்குகள், ஒவ்வொன்றாக. ⚽ இரண்டும் மிகவும் தீவிரமாக எடுத்துக்கொள்ளப்படுகின்றன. விதிவிலக்கில்லை.</span>
         </div>
       </div>
 
       <div class="diary-entry amber">
-        <div class="diary-time">Bonus Level · K-Citymarket | Prisma</div>
+        <div class="diary-time"><span class="t-main">Bonus Level · K-Citymarket | Prisma</span><span class="t-ta">போனஸ் நிலை · K-Citymarket | Prisma</span></div>
         <div class="diary-text">
-          Her favourite place on Earth. 🏪 Every single aisle gets the full inspection — she runs row to row, touching, testing, rearranging as needed.
+          <span class="t-main">Her favourite place on Earth. 🏪 Every single aisle gets the full inspection — she runs row to row, touching, testing, rearranging as needed.
           This is also the most dangerous part of any day: she moves faster than two adults can track, and "where did she go" is asked at least once per visit. 🚨 <em>We don't lose her. We just temporarily can't find her.</em> 😅<br><br>
-          For reference: Leo's Leikkimaa is the paid version of this experience. <strong>K-Citymarket | Prisma is the free one.</strong> She rates them equally. 🎟️➡️🆓
-        </div>
-      </div>
-
-      <div class="diary-entry berry">
-        <div class="diary-time">17:00 · First Sugar</div>
-        <div class="diary-text">
-          Ice cream. 🍦<br><br>
-          The milestone nobody planned but everybody saw coming. She took one look, one lick — and that was it. <em>A decision had been made.</em> No hesitation. No cautious second taste. Just full commitment, full speed, the way she approaches everything. 😂<br><br>
-          First intended sugar. She chose well.
+          For reference: Leo's Leikkimaa is the paid version of this experience. <strong>K-Citymarket | Prisma is the free one.</strong> She rates them equally. 🎟️➡️🆓</span>
+          <span class="t-ta-blk">பூமியிலேயே அவளுக்கு பிடித்தமான இடம். 🏪 ஒவ்வொரு வரிசையும் முழு ஆய்வைப் பெறும் — வரிசைக்கு வரிசை ஓடுவாள், தொடுவாள், சோதிப்பாள், தேவைப்படும்போது மறுசீரமைப்பாள். இது எந்த நாளிலும் மிகவும் ஆபத்தான பகுதி: இரண்டு பெரியவர்களால் கண்காணிக்க முடியாத வேகத்தில் நகர்வாள், "அவள் எங்கே போனாள்" என்ற கேள்வி ஒவ்வொரு வருகையிலும் குறைந்தது ஒரு முறை கேட்கப்படும். 🚨 <em>நாங்கள் அவளை தொலைக்கவில்லை. தற்காலிகமாக கண்டுபிடிக்க முடியவில்லை.</em> 😅<br><br>
+          குறிப்புக்காக: லியோ லெய்க்கிமா இந்த அனுபவத்தின் கட்டணம் பதிப்பு. <strong>K-Citymarket | Prisma இலவசம்.</strong> அவள் இரண்டையும் சமமாக மதிப்பிடுகிறாள். 🎟️➡️🆓</span>
         </div>
       </div>
 
       <div class="diary-entry lake">
-        <div class="diary-time">17:30 · Bath &amp; Lelukirja</div>
+        <div class="diary-time"><span class="t-main">17:30 · Bath &amp; Lelukirja</span><span class="t-ta">17:30 · குளியல் &amp; புத்தகம்</span></div>
         <div class="diary-text">
-          The book comes everywhere 🚿📖. She points, asks <strong>"What's that?"</strong>, we answer, she nods — then points at the <em>same picture again.</em> Not a question. A memory test. <strong>For us.</strong> 🧠 Wrong answer? Corrected. Patiently. Repeatedly. 👩‍🏫
+          <span class="t-main">The book comes everywhere 🚿📖. She points, asks <strong>"What's that?"</strong>, we answer, she nods — then points at the <em>same picture again.</em> Not a question. A memory test. <strong>For us.</strong> 🧠 Wrong answer? Corrected. Patiently. Repeatedly. 👩‍🏫</span>
+          <span class="t-ta-blk">புத்தகம் எங்கும் வருகிறது 🚿📖. அவள் சுட்டிக்காட்டுவாள், <strong>"அது என்ன?"</strong> என்று கேட்பாள், நாங்கள் பதில் சொல்வோம், தலையசைப்பாள் — பிறகு மீண்டும் <em>அதே படத்தை</em> சுட்டிக்காட்டுவாள். கேள்வி இல்லை. நினைவாற்றல் சோதனை. <strong>நம்மை.</strong> 🧠 தவறான பதில்? திருத்தப்படும். பொறுமையாக. மீண்டும் மீண்டும். 👩‍🏫</span>
         </div>
       </div>
 
       <div class="diary-entry berry">
-        <div class="diary-time">18:45 · The Call</div>
+        <div class="diary-time"><span class="t-main">18:45 · The Call</span><span class="t-ta">18:45 · அழைப்பு</span></div>
         <div class="diary-text">
-          Paati &amp; Thatha summoned on schedule. 📱 She plays, they watch — with their own snacks, she's not sharing. 🫙 Hang up? Called straight back to keep watching. <em>To her, generous.</em> 👴👵😂<br><br>
-          Somewhere in here, a random word drops and the room goes quiet — Tamil? English? Finnish? Kannada? 🔍 The "no" set covers all four: <em>Ei, No, Venam, Odhdhu.</em> Whichever lands, it's final. 😤
+          <span class="t-main">Paati &amp; Thatha summoned on schedule. 📱 She plays, they watch — with their own snacks, she's not sharing. 🫙 Hang up? Called straight back to keep watching. <em>To her, generous.</em> 👴👵😂<br><br>
+          Somewhere in here, a random word drops and the room goes quiet — Tamil? English? Finnish? Kannada? 🔍 The "no" set covers all four: <em>Ei, No, Venam, Odhdhu.</em> Whichever lands, it's final. 😤</span>
+          <span class="t-ta-blk">பாட்டி &amp; தாத்தா நேரத்திற்கு சரியாக அழைக்கப்படுகிறார்கள். 📱 அவள் விளையாடுவாள், அவர்கள் பார்ப்பார்கள் — தங்கள் சொந்த நொறுக்குத் தீனியோடு, அவள் பகிர மாட்டாள். 🫙 போன் வைக்க முயன்றால்? உடனே மீண்டும் அழைக்கப்படும், தொடர்ந்து பார்க்க. <em>அவள் கண்ணோட்டத்தில், இது தாராளமனப்பான்மை.</em> 👴👵😂<br><br>
+          இதற்கிடையே, ஒரு ரேண்டம் வார்த்தை விழும், அறை அமைதியாகிவிடும் — தமிழா? ஆங்கிலமா? ஃபின்னிஷா? கன்னடமா? 🔍 "வேண்டாம்" என்பதற்கான தொகுப்பு நான்கையும் உள்ளடக்கும்: <em>Ei, No, வேணும், Odhdhu.</em> எது கூடினாலும், அது இறுதி. 😤</span>
         </div>
       </div>
 
       <div class="diary-entry">
-        <div class="diary-time">20:30 · Bedtime</div>
+        <div class="diary-time"><span class="t-main">20:30 · Bedtime</span><span class="t-ta">20:30 · தூக்க நேரம்</span></div>
         <div class="diary-text">
-          On the way, every star gets counted, one by one. 🌙 Then: lullabies — no. Rocking — no. Swing — absolutely not. <em>None of the normal things work.</em><br><br>
-          The only thing that does: Dad buckles her in 🚗, Mum drives, full loop, Dad reaches back and holds her hand. <strong>That's the whole trick.</strong> 🤝 We've driven more kilometres putting her to sleep than to any real destination. 😂
+          <span class="t-main">On the way, every star gets counted, one by one. 🌙 Then: lullabies — no. Rocking — no. Swing — absolutely not. <em>None of the normal things work.</em><br><br>
+          The only thing that does: Dad buckles her in 🚗, Mum drives, full loop, Dad reaches back and holds her hand. <strong>That's the whole trick.</strong> 🤝 We've driven more kilometres putting her to sleep than to any real destination. 😂</span>
+          <span class="t-ta-blk">வழியில், ஒவ்வொரு நட்சத்திரமும் ஒவ்வொன்றாக எண்ணப்படுகிறது. 🌙 பிறகு: தாலாட்டு — வேண்டாம். ஆட்டல் — வேண்டாம். ஊஞ்சல் — கேள்வியே வேண்டாம். <em>சாதாரண முறைகள் எதுவும் வேலை செய்வதில்லை.</em><br><br>
+          வேலை செய்வது ஒன்றே ஒன்றுதான்: அப்பா கார்சீட் பூட்டுவார் 🚗, அம்மா ஓட்டுவார், ஒரு முழு சுற்று, அப்பா பின்னால் கை நீட்டி அவள் கையை பிடிப்பார். <strong>அவ்வளவுதான் ரகசியம்.</strong> 🤝 அவளை தூக்க வைக்க நாங்கள் ஓட்டிய கிலோமீட்டர்கள், எந்த உண்மையான இடத்திற்கும் ஓட்டியதை விட அதிகம். 😂</span>
         </div>
       </div>
 
@@ -1660,7 +1682,7 @@ html[lang="ta"] .t-sep { display:none; }
 
   <div class="p2-foot">
     <span class="fe">✦  🌲  ✦  🌲  ✦</span>
-    <div class="fl">One more page — meet the rest of the crew. 👀</div>
+    <div class="fl"><span class="t-main">One more page — meet the rest of the crew. 👀</span><span class="t-ta">இன்னும் ஒரு பக்கம் — மற்ற குழுவினரை சந்தியுங்கள். 👀</span></div>
   </div>
 
   <div class="balloons" id="b2"></div>
@@ -1670,7 +1692,7 @@ html[lang="ta"] .t-sep { display:none; }
 <!-- ══════════════════════════════════
      PAGE 3 — THE CAST & FINE PRINT
 ══════════════════════════════════ -->
-<div class="pg-label">Tapaa Dhrithi · Page Three</div>
+<div class="pg-label"><span class="t-main">Tapaa Dhrithi · Page Three</span><span class="t-ta">திருதியை சந்தியுங்கள் · மூன்றாம் பக்கம்</span></div>
 
 <div class="card p2" id="card3">
 
@@ -1714,25 +1736,27 @@ html[lang="ta"] .t-sep { display:none; }
   <div class="sparkles" id="sp3"></div>
 
   <div class="p2-hero">
-    <div class="p2-pretag">✨ Kiitos kaikille ✨</div>
-    <div class="p2-title alt">The Supporting Cast<br>(and a Few Rules)</div>
-    <div class="p2-sub">Everyone who keeps this circus running. 😄</div>
+    <div class="p2-pretag"><span class="t-main">✨ Kiitos kaikille ✨</span><span class="t-ta-blk">✨ அனைவருக்கும் நன்றி ✨</span></div>
+    <div class="p2-title alt"><span class="t-main">The Supporting Cast<br>(and a Few Rules)</span><span class="t-ta-blk">துணை நடிகர்கள்<br>(மற்றும் சில விதிகள்)</span></div>
+    <div class="p2-sub"><span class="t-main">Everyone who keeps this circus running. 😄</span><span class="t-ta-blk">இந்த சர்க்கஸை நடத்துபவர்கள் அனைவரும். 😄</span></div>
   </div>
 
   <div class="p2-body">
 
     <div class="interrupt">
-      <div class="interrupt-tag">⚡ Special Bulletin</div>
+      <div class="interrupt-tag"><span class="t-main">⚡ Special Bulletin</span><span class="t-ta">⚡ சிறப்பு அறிவிப்பு</span></div>
       <p>
-        Whenever Akka's around, <strong>everything pauses.</strong> 🎪<br>
-        Mum, forgotten. Dad, who? Akkuli, benched. ⏸️ Dhrithi locks onto Akka and doesn't let go — running circles around her, jumping into her arms, dancing for her, hugging her, kissing her, all in the same ten seconds, at full volume. <em>Less a greeting, more a takeover.</em> 😂
+        <span class="t-main">Whenever Akka's around, <strong>everything pauses.</strong> 🎪<br>
+        Mum, forgotten. Dad, who? Akkuli, benched. ⏸️ Dhrithi locks onto Akka and doesn't let go — running circles around her, jumping into her arms, dancing for her, hugging her, kissing her, all in the same ten seconds, at full volume. <em>Less a greeting, more a takeover.</em> 😂</span>
+        <span class="t-ta-blk">அக்கா இருக்கும்போதெல்லாம், <strong>எல்லாம் நின்றுவிடும்.</strong> 🎪<br>
+        அம்மா, மறக்கப்படுவாள். அப்பா, யார்? அக்குலி, பெஞ்சில். ⏸️ திருதி அக்காவை பிடித்துக்கொண்டு விடுவதில்லை — அவளை சுற்றி ஓடுவாள், அவள் கைகளில் குதிப்பாள், அவளுக்காக ஆடுவாள், அணைப்பாள், முத்தமிடுவாள் — எல்லாம் பத்து விநாடிகளில், முழு சத்தத்தில். <em>வரவேற்பு என்று சொல்வதை விட கைப்பற்றல் என்பதே சரி.</em> 😂</span>
       </p>
     </div>
 
     <div class="credits">
-      <div class="credits-title">In other recurring roles</div>
+      <div class="credits-title"><span class="t-main">In other recurring roles</span><span class="t-ta-blk">மற்ற தொடரும் பாத்திரங்களில்</span></div>
       <div class="credits-list">
-        <strong>Amma Pavi</strong> — the snuggles, always wants more 🤱<br>
+        <span class="t-main"><strong>Amma Pavi</strong> — the snuggles, always wants more 🤱<br>
         <strong>Dad / Azhaga Baby</strong> — says yes before she finishes asking ☀️😅<br>
         <strong>Mama</strong> — dance moves (now taught to many people, even the daycare teachers 🕺), followed by a magic show 🪄 and a full physical activity demo. Some video calls quietly turn into a joint gym session. 💪😂<br>
         <strong>Paati &amp; Thatha</strong> — her live audience, they watch everything she does 👴👵<br>
@@ -1740,29 +1764,55 @@ html[lang="ta"] .t-sep { display:none; }
         <strong>Emmi &amp; Suvi</strong> — certified cool humans at daycare 👩‍🏫<br>
         <strong>Aji</strong> — constant reiteration, <em>"No, Aji."</em> 😄<br>
         <strong>Chiththa &amp; Bippi</strong> — cow farm explorers — Gandhimaanagar branch. Hide-and-seek now requires a helmet. 🪖😂<br>
-        <strong>Cottage cheese, yogurt &amp; banana</strong> — basic life support 🫙🍌
+        <strong>Cottage cheese, yogurt &amp; banana</strong> — basic life support 🫙🍌</span>
+        <span class="t-ta-blk"><strong>அம்மா பவி</strong> — அணைப்புகள், எப்போதும் இன்னும் வேண்டும் என்று இருக்கும் 🤱<br>
+        <strong>டாட் / அழகா பேபி</strong> — அவள் கேட்கி முடிக்கும் முன்னே ஆமாம் சொல்வார் ☀️😅<br>
+        <strong>மாமா</strong> — நடன நகர்வுகள் (இப்போது பலருக்கும் கற்றுக்கொடுக்கப்பட்டது, பள்ளி ஆசிரியர்களுக்கும் கூட 🕺), பிறகு மேஜிக் ஷோ 🪄 மற்றும் முழு உடற்பயிற்சி செய்முறை. சில வீடியோ அழைப்புகள் கூட்டு ஜிம் செஷனாக மாறிவிடும். 💪😂<br>
+        <strong>பாட்டி &amp; தாத்தா</strong> — அவளின் நேரடி பார்வையாளர்கள், அவள் செய்வதை எல்லாம் பார்ப்பார்கள் 👴👵<br>
+        <strong>பாமோ</strong> — அவளின் முதல் உண்மையான நண்பன். அவன் பெயர் ஒரு நாளில் குறைந்தது 10 முறை, யாரும் கேட்காமலே வரும் 🗣️💛<br>
+        <strong>எம்மி &amp; சுவி</strong> — பள்ளியில் சான்றிதழ் பெற்ற கூல் மனிதர்கள் 👩‍🏫<br>
+        <strong>அஜி</strong> — தொடர்ந்த திரும்பச்சொல்லல், <em>"இல்லை, அஜி."</em> 😄<br>
+        <strong>சித்தா &amp; பிப்பி</strong> — பசு பண்ணை ஆராய்ச்சியாளர்கள் — காந்திமாநகர் கிளை. ஒளிஞ்சு பிடிக்கும் விளையாட்டுக்கு இப்போது தலைக்கவசம் தேவை. 🪖😂<br>
+        <strong>பனீர், தயிர் &amp; வாழைப்பழம்</strong> — அடிப்படை வாழ்க்கை ஆதரவு 🫙🍌</span>
       </div>
     </div>
 
     <!-- T&C -->
     <div class="tc">
-      <div class="tc-title">Things you should know before you meet her 😄</div>
+      <div class="tc-title"><span class="t-main">Things you should know before you meet her 😄</span><span class="t-ta-blk">அவளை சந்திக்கும் முன் தெரிந்திருக்க வேண்டியவை 😄</span></div>
       <div class="tc-list">
-        <div class="tc-item"><span class="ti">🚫</span><span><strong>Hair touching</strong> — touch it and face consequences</span></div>
-        <div class="tc-item"><span class="ti">🚿</span><span><strong>Bathing</strong> — a daily human rights violation</span></div>
-        <div class="tc-item"><span class="ti">👀</span><span><strong>Strangers</strong> — guilty until proven fun</span></div>
-        <div class="tc-item"><span class="ti">🪑</span><span><strong>High chair</strong> — she is not a baby, she is a CEO</span></div>
-        <div class="tc-item"><span class="ti">💔</span><span><strong>Mom &amp; Dad sitting together</strong> — ILLEGAL. She sits between them. Always. <em>This is constitutional.</em> 👑😂</span></div>
-        <div class="tc-item"><span class="ti">🚲</span><span><strong>Vera cycle</strong> — a grammar slip, but in Tamil <em>vera</em> means "another/different". So she always wants a different cycle. She is not wrong. 😂</span></div>
+        <div class="tc-item"><span class="ti">🚫</span><span><strong><span class="t-main">Hair touching</span><span class="t-ta">தலை முடி தொடல்</span></strong> — <span class="t-main">touch it and face consequences</span><span class="t-ta">தொட்டால் விளைவுகளை எதிர்கொள்ளுங்கள்</span></span></div>
+        <div class="tc-item"><span class="ti">🚿</span><span><strong><span class="t-main">Bathing</span><span class="t-ta">குளிப்பு</span></strong> — <span class="t-main">a daily human rights violation</span><span class="t-ta">தினசரி மனித உரிமை மீறல்</span></span></div>
+        <div class="tc-item"><span class="ti">👀</span><span><strong><span class="t-main">Strangers</span><span class="t-ta">அந்நியர்கள்</span></strong> — <span class="t-main">guilty until proven fun</span><span class="t-ta">வேடிக்கையாக நிரூபிக்கும் வரை குற்றவாளி</span></span></div>
+        <div class="tc-item"><span class="ti">🪑</span><span><strong><span class="t-main">High chair</span><span class="t-ta">ஹை சேர்</span></strong> — <span class="t-main">she is not a baby, she is a CEO</span><span class="t-ta">அவள் குழந்தையல்ல, அவள் CEO</span></span></div>
+        <div class="tc-item"><span class="ti">💔</span><span><strong><span class="t-main">Mom &amp; Dad sitting together</span><span class="t-ta">அம்மா &amp; அப்பா சேர்ந்து உட்கார்வது</span></strong> — <span class="t-main">ILLEGAL. She sits between them. Always. <em>This is constitutional.</em> 👑😂</span><span class="t-ta">சட்டவிரோதம். அவள் இடையில் உட்கார்வாள். எப்போதும். <em>இது அரசியலமைப்பு விதி.</em> 👑😂</span></span></div>
+        <div class="tc-item"><span class="ti">🚲</span><span><strong><span class="t-main">Vera cycle</span><span class="t-ta">வேற சைக்கிள்</span></strong> — <span class="t-main">a grammar slip, but in Tamil <em>vera</em> means "another/different". So she always wants a different cycle. She is not wrong. 😂</span><span class="t-ta">தமிழில் "வேற" என்றால் "வேறொரு". அதனால் அவள் எப்போதும் வேறொரு சைக்கிள் வேண்டும் என்கிறாள். அவள் தவறாக சொல்லவில்லை. 😂</span></span></div>
       </div>
     </div>
 
     <div class="come-see">
-      <div class="cs-title">Now you know her.<br>Come see it all live. 🎉</div>
+      <div class="cs-title"><span class="t-main">Now you know her.<br>Come see it all live. 🎉</span><span class="t-ta-blk">இப்போது அவளை தெரிந்துகொண்டீர்கள்.<br>எல்லாவற்றையும் நேரில் பாருங்கள். 🎉</span></div>
       <div class="cs-text">
-        Fair warning: the moment she sees a crowd, she will switch to<br>
+        <span class="t-main">Fair warning: the moment she sees a crowd, she will switch to<br>
         <em>full innocent mode</em> — angelic face, zero chaos, butter wouldn't melt. 😇<br>
-        Don't worry, we see right through it. 😂
+        Don't worry, we see right through it. 😂</span>
+        <span class="t-ta-blk">முன் எச்சரிக்கை: கூட்டத்தை பார்த்த உடனே அவள் முழு அப்பாவி முகட்டிற்கு மாறிவிடுவாள் —<br>
+        <em>தேவதை முகம், சுழியம் குழப்பம், வெண்ணெய் கரையாது.</em> 😇<br>
+        கவலைப்படாதீர்கள், நாங்கள் அதை கடந்து பார்க்கிறோம். 😂</span>
+      </div>
+    </div>
+
+    <div class="ice-closure">
+      <div class="ice-emoji">🍦</div>
+      <div class="ice-text">
+        <span class="t-main">She recently discovered ice cream.<br>
+        First intended sugar. One lick. Full commitment.<br>
+        <em>The way she does everything.</em><br><br>
+        <strong>She chose well. See you at the party. 🎉</strong></span>
+        <span class="t-ta-blk">சமீபத்தில் ஐஸ்கிரீம் கண்டுபிடித்தாள்.<br>
+        முதல் இனிப்பு. ஒரு நக்கு. முழு உறுதி.<br>
+        <em>அவள் எல்லாவற்றையும் செய்யும் விதம்.</em><br><br>
+        <strong>அவள் சரியாக தேர்ந்தெடுத்தாள். விழாவில் சந்திப்போம். 🎉</strong></span>
       </div>
     </div>
 
@@ -1770,7 +1820,7 @@ html[lang="ta"] .t-sep { display:none; }
 
   <div class="p2-foot">
     <span class="fe">✦  🌲  ✦  🌲  ✦</span>
-    <div class="fl">Two years in, she runs this house. We just pay the mortgage. 🏠</div>
+    <div class="fl"><span class="t-main">Two years in, she runs this house. We just pay the mortgage. 🏠</span><span class="t-ta">இரண்டு ஆண்டுகளில், அவள் இந்த வீட்டை நடத்துகிறாள். நாங்கள் மட்டும் கடன் கட்டுகிறோம். 🏠</span></div>
   </div>
 
   <div class="balloons" id="b3"></div>
