@@ -9,6 +9,7 @@
 const EVENT_CONFIG = {
   child: {
     name: 'Dhrithi',
+
     age: 2,
   },
   event: {
@@ -16,10 +17,14 @@ const EVENT_CONFIG = {
     date: 'July 4, 2026',
     /** Displayed time range */
     time: '17:00 – 19:00',
+    /** Timezone label shown below the time — Finland is EEST (UTC+3) in summer */
+    timezone: 'EEST · Tampere time',
     /** HTML allowed — use <br> for line breaks */
-    venue: 'Jussilankulma 1 B7,<br>33580 Tampere',
+    venue: 'Jussilankulma 1 B7, 33580 Tampere',
     /** Google Maps or any map URL */
     mapsUrl: 'https://maps.google.com/?q=Jussilankulma+1+B7+Tampere+Finland',
+    /** Google Meet or video call URL — leave empty to hide the row */
+    meetUrl: '',
   },
   rsvp: {
     /** RSVP cut-off shown in the invite footer */
