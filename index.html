@@ -781,6 +781,15 @@ html[lang="ta"] .t-ta-blk { display:block; }
 .ice-closure .ice-emoji{font-size:32px;margin-bottom:10px;}
 .ice-closure .ice-text{font-size:13px;line-height:1.7;color:var(--ink);}
 .ice-closure em{color:var(--berry);font-style:normal;}
+/* ── STATS BAR ── */
+.stats-bar{
+  width:min(490px,100%);margin:4px auto 16px;
+  display:flex;align-items:center;justify-content:center;gap:20px;
+  font-family:'Inter',sans-serif;font-size:11px;
+  color:var(--smoke);letter-spacing:.5px;
+}
+.stats-bar .s-dot{color:var(--forest-l);}
+.stats-bar .s-count{color:var(--forest);font-weight:600;}
 </style>
 </head>
 <body>
@@ -1855,6 +1864,19 @@ html[lang="ta"] .t-ta-blk { display:block; }
 
 <div style="text-align:center;padding:10px 16px;font-family:'Inter',sans-serif;font-size:11px;letter-spacing:1px;color:var(--forest);font-weight:600;margin:0 auto;max-width:min(490px,100%);">Invitation &amp; Dhrithi © pavithrasubramaniyam · 2026</div>
 
+<div class="stats-bar">
+  <span>
+    👀 <span class="t-main t-fi">Viewed</span><span class="t-ta">பார்த்தவர்கள்</span>
+    <span class="s-count" id="visitor-count">—</span>
+    <span class="t-main t-fi">times</span><span class="t-ta">முறை</span>
+  </span>
+  <span class="s-dot">·</span>
+  <span>
+    <span class="t-main t-fi">Updated</span><span class="t-ta">புதுப்பிக்கப்பட்டது</span>
+    <span id="last-updated">22 Jun 2026</span>
+  </span>
+</div>
+
 
 <script>
 // Photo/video — syncs to both pages
@@ -2004,6 +2026,16 @@ function triggerBalloons(id){
 setTimeout(()=>triggerBalloons('b1'),900);
 setTimeout(()=>triggerBalloons('b2'),1500);
 setTimeout(()=>triggerBalloons('b3'),2100);
+
+// Visitor counter — countapi.xyz, no setup needed, fails silently
+(function(){
+  const el = document.getElementById('visitor-count');
+  if (!el) return;
+  fetch('https://api.countapi.xyz/hit/dheeinvites-dhrithi-2026/views')
+    .then(r => r.json())
+    .then(d => { if (d && d.value) el.textContent = d.value.toLocaleString(); })
+    .catch(() => { el.closest('.stats-bar') && (el.closest('.stats-bar').style.display = 'none'); });
+})();
 </script>
 </body>
 </html>
