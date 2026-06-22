@@ -2027,11 +2027,11 @@ setTimeout(()=>triggerBalloons('b1'),900);
 setTimeout(()=>triggerBalloons('b2'),1500);
 setTimeout(()=>triggerBalloons('b3'),2100);
 
-// Visitor counter — countapi.xyz, no setup needed, shows — on failure
+// Visitor counter — Vercel serverless /api/visits
 (function(){
   const el = document.getElementById('visitor-count');
   if (!el) return;
-  fetch('https://api.countapi.xyz/hit/dheeinvites-dhrithi-2026/views')
+  fetch('/api/visits')
     .then(r => r.json())
     .then(d => { el.textContent = (d && d.value) ? d.value.toLocaleString() : '—'; })
     .catch(() => { el.textContent = '—'; });

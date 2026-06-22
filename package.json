@@ -6,6 +6,9 @@
     "test": "playwright test",
     "test:update": "playwright test --update-snapshots"
   },
+  "dependencies": {
+    "@vercel/kv": "^2.0.0"
+  },
   "devDependencies": {
     "@playwright/test": "^1.44.0"
   }
