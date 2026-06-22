@@ -1489,7 +1489,7 @@ html[lang="ta"] .t-ta-blk { display:block; }
       <em>நம் சின்னஞ்சிறு கோடைக்கால ஆராய்ச்சியாளரை கொண்டாட வாருங்கள்.</em></span>
     </div>
 
-    <div class="forest-badges"><span class="t-main">🐝 Bees · 🐼 Panda · 🚜 Excavator · 🌲 Forest · 🐨 Koala dress always</span><span class="t-ta">🐝 தேனீக்கள் · 🐼 பாண்டா · 🚜 எக்ஸ்கவேட்டர் · 🌲 காடு · 🐨 கோலா டிரஸ் எப்போதும்</span></div>
+    <div class="forest-badges"><span class="t-main">🐝 Bees · 🐼 Panda · 🚜 Excavator · 🌱 Sand · 🐨 Koala dress</span><span class="t-fi">🐝 Mehiläiset · 🐼 Panda · 🚜 Kaivuri · 🌱 Hiekka · 🐨 Koolapuku</span><span class="t-ta">🐝 தேனீக்கள் · 🐼 பாண்டா · 🚜 எக்ஸ்கவேட்டர் · 🌱 மணல் · 🐨 கோலா டிரஸ்</span></div>
 
     <div class="det-grid">
       <div class="det"><div class="d-ic">📅</div><div class="d-lb"><span class="t-fi">Päivämäärä</span><span class="t-sep"> · </span><span class="t-en">Date</span><span class="t-sep"> · </span><span class="t-ta">தேதி</span></div><div class="d-vl" id="cfg-date">July 4, 2026</div></div>
@@ -1866,13 +1866,13 @@ html[lang="ta"] .t-ta-blk { display:block; }
 
 <div class="stats-bar">
   <span>
-    👀 <span class="t-main t-fi">Viewed</span><span class="t-ta">பார்த்தவர்கள்</span>
+    👀 <span class="t-main">Viewed</span><span class="t-fi">Katsoneet</span><span class="t-ta">பார்த்தவர்கள்</span>
     <span class="s-count" id="visitor-count">—</span>
-    <span class="t-main t-fi">times</span><span class="t-ta">முறை</span>
+    <span class="t-main">times</span><span class="t-fi">kertaa</span><span class="t-ta">முறை</span>
   </span>
   <span class="s-dot">·</span>
   <span>
-    <span class="t-main t-fi">Updated</span><span class="t-ta">புதுப்பிக்கப்பட்டது</span>
+    <span class="t-main">Updated</span><span class="t-fi">Päivitetty</span><span class="t-ta">புதுப்பிக்கப்பட்டது</span>
     <span id="last-updated">22 Jun 2026</span>
   </span>
 </div>
@@ -2027,14 +2027,14 @@ setTimeout(()=>triggerBalloons('b1'),900);
 setTimeout(()=>triggerBalloons('b2'),1500);
 setTimeout(()=>triggerBalloons('b3'),2100);
 
-// Visitor counter — countapi.xyz, no setup needed, fails silently
+// Visitor counter — countapi.xyz, no setup needed, shows — on failure
 (function(){
   const el = document.getElementById('visitor-count');
   if (!el) return;
   fetch('https://api.countapi.xyz/hit/dheeinvites-dhrithi-2026/views')
     .then(r => r.json())
-    .then(d => { if (d && d.value) el.textContent = d.value.toLocaleString(); })
-    .catch(() => { el.closest('.stats-bar') && (el.closest('.stats-bar').style.display = 'none'); });
+    .then(d => { el.textContent = (d && d.value) ? d.value.toLocaleString() : '—'; })
+    .catch(() => { el.textContent = '—'; });
 })();
 </script>
 </body>
