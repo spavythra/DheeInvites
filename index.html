@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fi">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -1972,9 +1972,9 @@ if (typeof EVENT_CONFIG !== 'undefined') {
 (function () {
   const btn = document.getElementById('langBtn');
   if (!btn) return;
-  const next  = { fi: 'en',        en: 'ta',                  ta: 'fi' };
-  const label = { fi: '🇫🇮 FI',   en: '🇬🇧 EN',            ta: '🇮🇳 தமிழ்' };
-  const aria  = { fi: 'Vaihda suomeksi', en: 'Switch to English', ta: 'தமிழில் மாற்று' };
+  const next  = { en: 'ta',              ta: 'fi',                  fi: 'en' };
+  const label = { en: '🇬🇧 EN',        ta: '🇮🇳 தமிழ்',          fi: '🇫🇮 FI' };
+  const aria  = { en: 'Switch to English', ta: 'தமிழில் மாற்று', fi: 'Vaihda suomeksi' };
   const sync = (lang) => {
     btn.textContent = label[lang] || label.fi;
     btn.setAttribute('aria-label', aria[lang] || aria.fi);
